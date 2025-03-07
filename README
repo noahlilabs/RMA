@@ -1,4 +1,4 @@
-Infini-Attention GPU Demo
+(THIS IS WORK IN PROGESS FOR RMA, CODE WAS MADE BACK IN DECEMBER FIRST)
 
 A GPU-accelerated implementation of Attention mechanism for efficiently processing long documents with constant memory usage.
 
