@@ -1,8 +1,8 @@
-# Infini-Attention GPU Demo
+Infini-Attention GPU Demo
 
 A GPU-accelerated implementation of Attention mechanism for efficiently processing long documents with constant memory usage.
 
-## What Is Infinite Attention?
+What Is Infinite Attention?
 
 Infinite Attention is a novel attention mechanism that solves the quadratic complexity problem of standard attention by:
 - Processing text in fixed-size segments
@@ -11,7 +11,7 @@ Infinite Attention is a novel attention mechanism that solves the quadratic comp
 
 This enables processing documents of arbitrary length while maintaining context across segments.
 
-## Features
+Features
 
 - 🚀 **GPU-Accelerated**: Uses WGPU for cross-platform GPU acceleration
 - 📝 **Format Support**: Processes TXT, PDF, and DOCX documents
@@ -19,27 +19,27 @@ This enables processing documents of arbitrary length while maintaining context 
 - 🔄 **Streaming**: Processes documents as streams rather than loading entirely into memory
 - 🧮 **Multi-Head Attention**: Supports multiple attention heads for better representation
 
-## Prerequisites
+Prerequisites
 
-- **Rust and Cargo** - Install via `curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh`
-- **PDF Support** (optional) - Install poppler: 
+- Rust and Cargo - Install via `curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh`
+- PDF Support (optional) - Install poppler: 
   - macOS: `brew install poppler`
   - Linux: `sudo apt-get install poppler-utils`
-- **DOCX Support** (optional) - Install pandoc:
+- DOCX Support** (optional) - Install pandoc:
   - macOS: `brew install pandoc`
   - Linux: `sudo apt-get install pandoc`
 
-## Building and Running
+Building and Running
 
 ```bash
-# Build
+Build
 cargo build --release
 
-# Run
+Run
 ./target/release/infini_attention_gpu_demo --input "path/to/file.pdf" --segment-size 16 --embed-dim 12 --gpu
 ```
 
-## Command Line Arguments
+Command Line Arguments
 
 | Argument | Description | Default |
 |----------|-------------|---------|
@@ -50,7 +50,7 @@ cargo build --release
 | `--heads` | Number of attention heads | 1 |
 | `--gpu` | Enable GPU acceleration | false |
 
-## How It Works
+How It Works
 
 1. **Document Processing**: Reads and converts documents to text streams
 2. **Tokenization**: Converts text to token IDs
@@ -59,7 +59,7 @@ cargo build --release
 5. **Attention Computation**: Processes each segment through the infinite attention mechanism
 6. **Memory Update**: Updates persistent memory matrices after each segment
 
-## Technical Notes
+Technical Notes
 
 - The `embed-dim` must be divisible by 3 for the Q/K/V split in attention computation
 - For processing PDFs, make sure poppler-utils is installed
